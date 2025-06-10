@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "hi-IN"
 title = "पॉडकास्टिंग कैसे करें? - नये पॉडकास्टर्स के लिये संपूर्ण मार्गदर्शिका"
 theme = "book-promo"
-disableKinds = ["taxonomy", "taxonomyTerm"]
+#disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
   author = "Debashish Chakrabarty"
@@ -14,6 +14,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   readSampleText = "पुस्तक की एक झलक"
   buyLink = "#buy-now"
   sampleLink = "#sneak-peek"
+  googleAnalytics = "G-BFFJV3NVMD"
 
 [menu]
   [[menu.main]]
