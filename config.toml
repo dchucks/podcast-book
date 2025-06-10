@@ -1,0 +1,42 @@
+baseURL = "/"
+languageCode = "hi-IN"
+title = "पॉडकास्टिंग कैसे करें? - नये पॉडकास्टर्स के लिये संपूर्ण मार्गदर्शिका"
+theme = "book-promo"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+  author = "Debashish Chakrabarty"
+  description = "क्या आपके पास कहने के लिए कुछ खास है? अब उसे सुनने वाले भी होंगे। हर कहानी, हर विचार और हर आवाज़ को मंच मिले, यही है पॉडकास्टिंग का मकसद। इस पुस्तक से सीखिए कि बिना स्टूडियो, बिना खर्च और बिना तकनीकी ज्ञान के भी कैसे आप हज़ारों श्रोताओं तक अपनी बात पहुँचा सकते हैं। अपनी आवाज़ को शक्ति दीजिए, और खुद को एक सफल पॉडकास्टर बनाइए।"
+  bookTitle = "पॉडकास्टिंग कैसे करें?"
+  bookTagline = "नये पॉडकास्टर्स के लिये संपूर्ण मार्गदर्शिका!"
+  coverImage = "/images/book-cover.jpg"
+  getCopyText = "अपनी प्रति खरीदें"
+  readSampleText = "पुस्तक की एक झलक"
+  buyLink = "#buy-now"
+  sampleLink = "#sneak-peek"
+
+[menu]
+  [[menu.main]]
+    name = "मुखपृष्ठ"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "पुस्तक के बारे में"
+    url = "#about-book"
+    weight = 2
+  [[menu.main]]
+    name = "झलक"
+    url = "#sneak-peek"
+    weight = 3
+  [[menu.main]]
+    name = "समीक्षाएं"
+    url = "#testimonials"
+    weight = 4
+  [[menu.main]]
+    name = "लेखक परिचय"
+    url = "#author"
+    weight = 5
+  [[menu.main]]
+    name = "अभी खरीदें"
+    url = "#buy-now"
+    weight = 6

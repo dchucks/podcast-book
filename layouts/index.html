@@ -1,0 +1,375 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">{{ .Site.Params.bookTitle }}</div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1️⃣ Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>{{ .Site.Params.bookTitle }}</h1>
+                    <h2>{{ .Site.Params.bookTagline }}</h2>
+                    <p class="blurb">{{ .Site.Params.description }}</p>
+                    <div class="cta-buttons">
+                        <a href="{{ .Site.Params.buyLink }}" class="btn btn-primary">{{ .Site.Params.getCopyText }}</a>
+                        <a href="{{ .Site.Params.sampleLink }}" class="btn btn-secondary">{{ .Site.Params.readSampleText }}</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ .Site.Params.coverImage }}" alt="{{ .Site.Params.bookTitle }} cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2️⃣ About the Book Section -->
+        <section id="about-book" class="about-section">
+            <div class="container">
+                <h2 class="section-title">इस पुस्तक में आपके लिये क्या है?</h2>
+                <div class="book-features">
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-headphones"></i></div>
+                        <h3>शुरुआत वहीं से जहाँ आप हैं</h3>
+                        <p>लैपटॉप और मोबाइल से ही पॉडकास्ट की पूरी दुनिया का दरवाज़ा खुलता है। इस किताब से आप बिना तकनीकी जानकारी के भी अपना पॉडकास्ट शो शुरू कर पाएँगे।</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-map-location-dot"></i></div>
+                        <h3>एक रोडमैप, जिससे आप रास्ता नहीं भटकेंगे</h3>
+                        <p>विषय तय करने से लेकर नाम सोचने, स्क्रिप्ट लिखने, रिकॉर्डिंग सेटअप बनाने और पहला एपिसोड पब्लिश करने तक, ये किताब हर स्टेप को आसान और असरदार बनायेगी।</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-volume-high"></i></div>
+                        <h3>आपकी आवाज़ को पेशेवर बनाने के राज़</h3>
+                        <p>बैकग्राउंड म्यूज़िक, स्क्रिप्टिंग हुक्स, संपादन टिप्स और पर्सनल टच से पॉडकास्ट को श्रोताओं के दिल से जुड़ने लायक बनाना — सब इस किताब में है।</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                        <h3>पॉडकास्ट को पहुँचाइए हज़ारों लाखों तक</h3>
+                        <p>Spotify, Apple Podcasts जैसे प्लेटफॉर्म पर अपने शो को फ्री में पब्लिश करना सीखिए, बिना किसी तकनीकी तामझाम के।</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-users-rays"></i></div>
+                        <h3>श्रोताओं को जोड़े रखने की तरकीबें</h3>
+                        <p>सिखिये कंटेंट प्लानिंग, सोशल मीडिया पर प्रचार और श्रोता समुदाय का निर्माण — ताकि एक बार सुनने वाला बार-बार लौटे।</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                        <h3>कमाई का पूरा गणित, बिल्कुल साफ़-साफ़</h3>
+                        <p>बुक डील से लेकर ब्रांड प्रायोजन और अफिलिएट मार्केटिंग से लेकर क्राउडफंडिंग तक — इस किताब में जानिए पॉडकास्ट से पैसे कमाने के ज़मीनी तरीके।</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-repeat"></i></div>
+                        <h3>पॉडकास्ट की निरंतरता बनाए रखने की रणनीति</h3>
+                        <p>बहुत से पॉडकास्ट 3 एपिसोड बाद बंद हो जाते हैं, आप उनमें से न हों। यह किताब सिखायेगी कि कंटेंट प्लानिंग, निरंतरता और प्रेरणा कैसे बनाए रखें ताकि आपका शो टिके और फलेफूले।</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI और नई तकनीकों का स्मार्ट इस्तेमाल</h3>
+                        <p>अब AI से पॉडकास्ट संपादन, ट्रांसक्रिप्शन और प्रोमो बनाना आसान हो गया है। पुसत्क में बताए गए टूल्स और टिप्स से आप एक स्मार्ट पॉडकास्टर बनेंगे, सिर्फ मेहनती नहीं।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3️⃣ Sneak Peek Section -->
+        <section id="sneak-peek" class="sneak-peek-section">
+            <div class="container">
+                <h2 class="section-title">एक झलक</h2>
+                <div class="toc-sample">
+                    <div class="toc">
+                        <h3>विषय-सूची</h3>
+                        <ul>
+                            <li>प्राक्कथन</li>
+                            <li>अध्याय 1: पॉडकास्टिंग क्या है और क्यों महत्वपूर्ण है</li>
+                            <li>अध्याय 2: अपना पॉडकास्ट सेटअप कैसे करें?</li>
+                            <li>अध्याय 3: आपके प्रथम पॉडकास्ट का पहला अंक कैसे बनायें</li>
+                            <li>अध्याय 4: अपना पॉडकास्ट निःशुल्क रिकॉर्ड और प्रकाशित कैसे करें</li>
+                            <li>अध्याय 5: अपने पॉडकास्ट को विकसित और प्रचारित कैसे करें</li>
+                            <li>अध्याय 6: अपने पॉडकास्ट से आय अर्जित कैसे करें</li>
+                            <li>अध्याय 7: अपने पॉडकास्ट को अगले स्तर तक कैसे ले जायें</li>
+                            <li>अध्याय 8: पॉडकास्टिंग का भविष्य</li>
+                            <li>परिशिष्ट 1 - ऑडियो क्रांति का असली हीरोः RSS फ़ीड</li>
+                            <li>परिशिष्ट 2 - साउंड रिकार्डिंग व संपादन के लिये ऑडैसिटी का उपयोग कैसे करें</li>
+                            <li>परिशिष्ट 3 - छमाही पॉडकास्ट समृद्धि योजना</li>
+                            <li>परिशिष्ट 4 - भारतीय पॉडकास्टर्स के लिए कानूनी परामर्श</li>
+                            <li>परिशिष्ट 5 - पॉडकास्टर्स के लिए 50 सबसे लोकप्रिय मुफ़्त या ओपन सोर्स टूल</li>
+                        </ul>
+                    </div>
+                    <div class="sample">
+                        <h3>अंश पढ़ें</h3>
+                        <div class="sample-content">
+                            <p><strong>प्राक्कथन</strong> से</p>
+                            <blockquote>
+                                <p>"वे दिन बीत चुके हैं जब केवल रेडियो स्टेशन ये तय करते थे कि किसे सुना जाएगा। आज, एक लैपटॉप, एक बुनियादी माइक्रोफोन (या यहां तक कि आपका फोन भी), और निशुल्क उपकरणों के साथ, आप अपना स्वयं का निजी रेडियो ब्रॉडकास्टिंग नुमा प्रकल्प बना सकते हैं। चाहे आप उद्यमिता, मानसिक स्वास्थ्य, बॉलीवुड की गॉसिप, या क्रिकेट पर चर्चा करना चाहते हों, पॉडकास्टिंग आपको एक व्यापक मंच प्रदान करती है। और इसे सुनने वालों की तादाद करोड़ों में है। केवल अंग्रेजी नहीं, बल्कि हर देशीय व प्रांतीय भाषा में।</p>
+                                <p>पॉडकास्ट सिर्फ़ सात सालों में रेडियो जितना ही लोकप्रिय हो गये हैं। दरअसल 13-64 वर्ष की आयु के लोगों के लिए, पॉडकास्ट अब रेडियो से ज़्यादा लोकप्रिय हैं। दुनिया भर में अब 42 लाख से ज़्यादा पॉडकास्ट हैं, जिनमें हर तीन दिन में एक लाख से ज़्यादा नए पॉडकास्ट प्रकाशित होते हैं। 2023 में 45 करोड़ से ज़्यादा लोगों ने पॉडकास्ट सुना, और 2026 तक यह संख्या 62 करोड़ तक पहुँचने की उम्मीद है। भारत में लगभग 2.5 करोड़ लोग प्रतिदिन कम से कम एक पॉडकास्ट सुनते हैं। साथ ही, पॉडकास्ट सुनने में प्रति सप्ताह बिताया जाने वाला औसत समय लगभग 7.5 घंटे है।"</p>
+                            </blockquote>
+                            <a href="https://publish.pothi.com/preview/?sku=SKU29135" class="sample-link" target="_blank">पुस्तक के और मुफ्त अंश पढ़ें</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4️⃣ Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">पाठकों की राय</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p>"The book has practical advice on each facet of the podcasting - from naming and preparing the first episode to editing, marketing, and even legality. It's written for podcasting without resources but is surely helpful to take your podcasting to next level."</p>
+                        <div class="testimonial-author">— Sudarshan S. Gusain (Road Safety Expert & Voracious Reader)</div>
+                    </div>
+                    <!--
+    <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"I've read several books on podcasting, but this one stands out for its actionable advice and step-by-step approach. A must-read!"</p>
+        <div class="testimonial-author">— Michael T., Host of "Business Breakthrough"</div>
+    </div>
+    <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"The section on budget equipment saved me hundreds of dollars. This book pays for itself in the first chapter alone."</p>
+        <div class="testimonial-author">— Emma R., Host of "Mindful Moments"</div>
+    </div>
+        -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5️⃣ About the Author Section -->
+        <section id="author" class="author-section">
+            <div class="container">
+                <h2 class="section-title">लेखक परिचय</h2>
+                <div class="author-container">
+                    <div class="author-image">
+                        <img src="/images/author-photo.jpg" alt="{{ .Site.Params.author }}">
+                    </div>
+                    <div class="author-bio">
+                        <h3>देबाशीष चक्रबर्ती</h3>
+                        <p>पुणे, भारत के निवासी देबाशीष एक सॉफ्टवेयर पेशेवर हैं। वे 2002 से अंग्रेजी और हिंदी में ब्लॉगिंग करते रहे हैं। उन्होंने भारत के पहले (और एकमात्र) देसी ब्लॉग अवार्ड <a href="https://indibloggies.blogspot.com/" target="_blank" rel="nofollow"><strong>Indibloggies</strong></a>, पहले हिंदी ब्लॉग एग्रीगेटर <a href="https://web.archive.org/web/20050808074033/http://www.myjavaserver.com/~hindi/" target="_blank" rel="nofollow"><strong>चिट्ठा विश्व</strong></a>, हिंदी वेबजीन <a href="http://nirantar.org/" target="_blank" rel="nofollow"><strong>निरंतर</strong></a> और <a href="http://samayiki.com/" target="_blank" rel="nofollow"><strong>सामयिकी</strong></a><strong> </strong>और हिंदी पॉडकास्ट प्लैटफॉर्म <a href="http://podbharati.com/" target="_blank" rel="nofollow"><strong>पॉडभारती</strong></a> की स्थापना की। देबाशीष ने कई सॉफ्टवेयर्स के हिन्दी स्थानीयकरण में योगदान दिया है। उन्होंने कई सामुदायिक मंचों की स्थापना में योगदान दिया जैसे किः <a href="http://bunokahani.blogspot.com/" target="_blank" rel="nofollow"><strong>बुनो कहानी</strong></a> (एक समूह ब्लॉग जहां विभिन्न लेखक सचमुच एक कहानी बुनते हैं) और <a href="https://web.archive.org/web/20080509161849/http://akshargram.com/sarvagya/index.php/Anugunj" target="_blank" rel="nofollow"><strong>अनुगूंज</strong></a> (हिंदी ब्लॉगर्स द्वारा आयोजित एक वेब इवेंट - जहां विभिन्न ब्लॉगर किसी दिए गए विषय पर लिखते हैं)। संप्रति वे <a href="http://parikrama.substack.com/" target="_blank" rel="nofollow"><strong>पॉडकास्ट परिक्रमा</strong></a> और <a href="http://agilechronicles.substack.com/" target="_blank" rel="nofollow"><strong>द एजाइल क्रॉनिकल्स</strong></a> नामक न्यूज़लेटर प्रकाशित करते हैं। </p>
+                        <p>देबाशीष द्वारा स्थापित पॉडकास्ट प्लैटफॉर्म पॉडभारती को 2008 में प्रतिष्ठित पुरस्कार के लिये <a href="https://www.podbharati.com/posts/tata_nen_awards/" target="_blank"><b>नामांकित किया गया</b></a> था। </p>
+                        <div class="author-social">
+                            <a href="https://nuktachini.debashish.com" target="_blank"><i class="fab fa-wordpress"></i></a>
+                            <a href="https://linkedin.com/in/debashishc" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/agilechronicles" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6️⃣ Call to Action / How to Buy Section -->
+        <section id="buy-now" class="buy-section">
+            <div class="container">
+                <h2 class="section-title">अपनी प्रति आज ही खरीदें</h2>
+                <p class="buy-tagline">प्रिंट व ईबुक प्रारूप में उपलब्ध</p>
+                <div class="book-formats">
+                    <div class="format">
+                        <div class="format-icon"><i class="fas fa-book"></i></div>
+                        <h3>Paperback<br />(ISBN: 9789334292398)</h3>
+                        <p class="price">₹399</p>
+                        <a href="https://store.pothi.com/book/debashish-chakrabarty-%E0%A4%AA%E0%A5%89%E0%A4%A1%E0%A4%95%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82/" class="btn btn-secondary">Pothi.com &nbsp;<i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="format">
+                        <div class="format-icon"><i class="fas fa-tablet-alt"></i></div>
+                        <h3>eBook</h3>
+                        <p class="price">₹399</p>
+                        <a href="https://www.amazon.in/dp/B0F7HVDVHD" class="btn btn-secondary">Amazon &nbsp;<i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="format">
+                        <div class="format-icon"><i class="fas fa-tablet-alt"></i></div>
+                        <h3>eBook</h3>
+                        <p class="price">$8.99</p>
+                        <a href="#" class="btn btn-secondary">Leanpub &nbsp;<i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>                
+                <div class="guarantee">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Print edition will soon become available at Amazon and Flipkart also.<br/> Subscribe to <a href=" https://parikrama.substack.com"> https://parikrama.substack.com</a> to get notified when it does.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7️⃣ Bonus Section -->
+        <section id="bonus" class="bonus-section">
+            <div class="container">
+                <h2 class="section-title">बोनस सामग्री</h2>
+                <div class="bonuses">
+                    <div class="bonus">
+                        <div class="bonus-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>शैली और विषय चुनने की चीटशीट</h3>
+                        <p>आपकी रुचियों और ताक़त के आधार पर किस पॉडकास्ट शैली में सबसे ज़्यादा चमक सकते हैं — इसका फ़ॉर्मूला।</p>
+                    </div>
+                    <div class="bonus">
+                        <div class="bonus-icon"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+                        <h3>6 महीने की पॉडकास्ट सफलता योजना</h3>
+                        <p>अपने पॉडकास्ट को लाँच करने से इसे प्रो लेवल तक ले जाने का actionable रोडमैप।</p>
+                    </div>
+                    <div class="bonus">
+                        <div class="bonus-icon"><i class="fa-solid fa-toolbox"></i></div>
+                        <h3>50 बेहतरीन मुफ़्त पॉडकास्ट टूल्स की सूची</h3>
+                        <p>रिकॉर्डिंग, संपादन, प्रचार और AI से जुड़े टॉप 50 मुक्त-सोर्स और अन्य टूल्स की सूची</p>
+                    </div>
+                    <div class="bonus">
+                        <div class="bonus-icon"><i class="fa-solid fa-sliders"></i></div>
+                        <h3>Audacity गाइड</h3>
+                        <p>रिकॉर्डिंग, संपादन, शोर हटाना, बैकग्राउंड म्यूज़िक जोड़ना — हर जरूरी स्टेप को बेहद आसान भाषा में समझाया गया है ताकि आप बिना तकनीकी ज्ञान के भी प्रोफेशनल साउंड पा सकें।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8️⃣ FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">अक्सर पूछे जाने वाले सवाल</h2>
+                <div class="faqs">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>क्या यह पुस्तक पूर्णतः शुरुआती लोगों के लिए उपयुक्त है?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>बिल्कुल! यह पुस्तक विशेष रूप से उन लोगों के लिए डिज़ाइन की गई है जिन्हें पॉडकास्टिंग का कोई अनुभव नहीं है। सब कुछ सरल शब्दों में चरण-दर-चरण निर्देशों के साथ समझाया गया है।</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>क्या मुझे podcast शुरू करने के लिए महंगे उपकरण की आवश्यकता है?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>बिलकुल नहीं। पुस्तक में सभी बजट स्तरों के लिए सिफारिशें शामिल हैं, जिसमें केवल अपने स्मार्टफोन या लैपटॉप से ​​​​शुरू करने का तरीका भी शामिल है। महंगे गियर से ज़्यादा गुणवत्तापूर्ण सामग्री मायने रखती है।</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>मुझे अपना पहला एपिसोड कब तक लॉन्च कर सकुंगा?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>पुस्तक के ढांचे का पालन करके, अधिकांश पाठक व्यस्त शेड्यूल के बावजूद 2-4 सप्ताह के भीतर अपना पहला एपिसोड लॉन्च कर सकते हैं। पुस्तक में 6 महीने की लॉन्च योजना शामिल है।</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>क्या यह पुस्तक ईबुक के रूप में भी उपलब्ध है? क्या इनकी सामग्री में अंतर है?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>जी हाँ! प्रिंट संस्करण के अलावा ईबुक संस्करण लीनपब व अमेज़ॉन (ASIN: B0F7HVDVHD) पर उपलब्ध है। पेपरबैक व ईबुक दोनों की सामग्री में कोई अंतर नहीं है।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9️⃣ Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>{{ .Site.Params.bookTitle }}</h3>
+                    <p>{{ .Site.Params.bookTagline }}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>ज़रुरी लिंक्स</h4>
+                    <ul>
+                        {{ range .Site.Menus.main }}
+                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>संपर्क</h4>
+                    <p><a href="https://podbharati.com/contact/">इस फॉर्म का प्रयोग करें अथवा podbharati को gmail dot com पर लिखें</a></p>
+                    <div class="social-icons">
+                        <a href="https://x.com/podbharati" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/podbharati/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/podbharati" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@podbharati" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('show');
+            this.classList.toggle('active');
+        });
+
+        // FAQ toggles
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+
+                const icon = question.querySelector('.faq-toggle i');
+                if (faqItem.classList.contains('active')) {
+                    icon.classList.replace('fa-plus', 'fa-minus');
+                } else {
+                    icon.classList.replace('fa-minus', 'fa-plus');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    document.getElementById('nav-links').classList.remove('show');
+                    document.getElementById('menu-toggle').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+{{ end }}
