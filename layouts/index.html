@@ -1,28 +1,4 @@
 {{ define "main" }}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}">
-	<meta name="keywords" content="{{ .Site.Params.keywords }}">
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', '{{ .Site.Params.googleAnalytics }}');
-	</script>
-	<link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
 <body>
     <header class="site-header">
         <div class="container">
@@ -299,6 +275,24 @@
                             <p>जी हाँ! प्रिंट संस्करण के अलावा ईबुक संस्करण लीनपब व अमेज़ॉन (ASIN: B0F7HVDVHD) पर उपलब्ध है। पेपरबैक व ईबुक दोनों की सामग्री में कोई अंतर नहीं है।</p>
                         </div>
                     </div>
+					<div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is this book about?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>This is a comprehensive guide titled "Podcasting kaise karein?" designed specifically for new podcasters. It's a complete roadmap that teaches you how to start podcasting without a studio, without spending money, and without technical knowledge. The book empowers your voice and helps you become a successful podcaster.</p>
+                        </div>
+                    </div>
+					<div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Who is this book for?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>This book is perfect for complete beginners who have no prior podcasting experience. It's written in simple language with step-by-step instructions, making it accessible to anyone who has something to say and wants to reach thousands of listeners.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -383,5 +377,4 @@
         });
     </script>
 </body>
-</html>
 {{ end }}
