@@ -42,3 +42,7 @@ theme = "book-promo"
     name = "अभी खरीदें"
     url = "#buy-now"
     weight = 6
+  [[menu.main]]
+    name = "Podbharati"
+    url = "https://podbharati.com"
+    weight = 7
