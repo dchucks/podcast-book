@@ -35,7 +35,7 @@ theme = "book-promo"
     url = "#testimonials"
     weight = 4
   [[menu.main]]
-    name = "लेखक परिचय"
+    name = "लेखक से मिलें"
     url = "#author"
     weight = 5
   [[menu.main]]
