@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://podcasting-guide.netlify.app"
 languageCode = "hi-IN"
 title = "पॉडकास्टिंग कैसे करें? - नये पॉडकास्टर्स के लिये संपूर्ण मार्गदर्शिका"
 theme = "book-promo"
@@ -45,4 +45,4 @@ theme = "book-promo"
   [[menu.main]]
     name = "Podbharati"
     url = "https://podbharati.com"
-    weight = 7
+    weight = 7	
