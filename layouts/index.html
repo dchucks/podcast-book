@@ -26,6 +26,7 @@
                     <h1>{{ .Site.Params.bookTitle }}</h1>
                     <h2>{{ .Site.Params.bookTagline }}</h2>
                     <p class="blurb">{{ .Site.Params.description }}</p>
+					<p class="blurb"><i>{{ .Site.Params.isbn }}</i></p>
                     <div class="cta-buttons">
                         <a href="{{ .Site.Params.buyLink }}" class="btn btn-primary">{{ .Site.Params.getCopyText }}</a>
                         <a href="{{ .Site.Params.sampleLink }}" class="btn btn-secondary">{{ .Site.Params.readSampleText }}</a>
@@ -180,28 +181,40 @@
                 <h2 class="section-title">अपनी प्रति आज ही खरीदें</h2>
                 <p class="buy-tagline">प्रिंट व ईबुक प्रारूप में उपलब्ध</p>
                 <div class="book-formats">
+					<div class="format">
+                        <div class="format-icon"><i class="fas fa-book"></i></div>
+                        <h3>Paperback</h3>
+                        <p class="price">₹399</p>
+                        <a href="https://www.amazon.in/dp/9334292393" class="btn btn-secondary">Amazon</a>
+                    </div>
+					<div class="format">
+                        <div class="format-icon"><i class="fas fa-book"></i></div>
+                        <h3>Paperback</h3>
+                        <p class="price">₹399</p>
+                        <a href="https://www.flipkart.com/podcasting-kaise-karein-naye-podcasters-ke-liye-sampoorna-maargdarshikaa/p/itm09701e0288dd5?pid=9789334292398" class="btn btn-secondary">Flipkart</a>
+                    </div>
                     <div class="format">
                         <div class="format-icon"><i class="fas fa-book"></i></div>
-                        <h3>Paperback<br />(ISBN: 9789334292398)</h3>
+                        <h3>Paperback</h3>
                         <p class="price">₹399</p>
-                        <a href="https://store.pothi.com/book/debashish-chakrabarty-%E0%A4%AA%E0%A5%89%E0%A4%A1%E0%A4%95%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82/" class="btn btn-secondary">Pothi.com &nbsp;<i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://store.pothi.com/book/debashish-chakrabarty-%E0%A4%AA%E0%A5%89%E0%A4%A1%E0%A4%95%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82/" class="btn btn-secondary">Pothi.com</a>
                     </div>
                     <div class="format">
                         <div class="format-icon"><i class="fas fa-tablet-alt"></i></div>
-                        <h3>Kindle eBook</h3>
+                        <h3>Kindle</h3>
                         <p class="price">₹399</p>
-                        <a href="https://www.amazon.in/dp/B0F7HVDVHD" class="btn btn-secondary">Amazon &nbsp;<i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.amazon.in/dp/B0F7HVDVHD" class="btn btn-secondary">Amazon</a>
                     </div>
                     <div class="format">
                         <div class="format-icon"><i class="fas fa-tablet-alt"></i></div>
                         <h3>eBook</h3>
-                        <p class="price">$8.99</p>
-                        <a href="#" class="btn btn-secondary">Leanpub &nbsp;<i class="fas fa-external-link-alt"></i></a>
+                        <p class="price">$4.99</p>
+                        <a href="#" class="btn btn-secondary">Leanpub</a>
                     </div>
                 </div>                
                 <div class="guarantee">
                     <i class="fas fa-info-circle"></i>
-                    <p>Print edition will soon become available at Amazon and Flipkart also.<br/> Subscribe to <a href=" https://parikrama.substack.com"> https://parikrama.substack.com</a> to get notified when it does.</p>
+                    <p>Want to stay updated on the latest in podcasting and the audio world?<br/> Subscribe to our Hindi newsletter <a href=" https://parikrama.substack.com">"Podcast Parikrama"</a> - trusted by 680+ audio enthusiasts!.</p>
                 </div>
             </div>
         </section>
@@ -292,6 +305,15 @@
                         </div>
                         <div class="faq-answer">
                             <p>This book is perfect for complete beginners who have no prior podcasting experience. It's written in simple language with step-by-step instructions, making it accessible to anyone who has something to say and wants to reach thousands of listeners.</p>
+                        </div>
+                    </div>
+					<div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How can I stay updated on podcasting and the audio industry?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can subscribe to our Hindi newsletter <a href=" https://parikrama.substack.com">"Podcast Parikrama"</a>, trusted by over 680 audio enthusiasts. It covers the latest happenings, trends, and insights from the world of podcasting and audio.</p>
                         </div>
                     </div>
                 </div>
